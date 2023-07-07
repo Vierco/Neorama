@@ -1,8 +1,13 @@
 # Welcome to Neorama 
 
+![Welcome image](https://github.com/Vierco/Neorama/blob/main/app/src/main/res/drawable/introducing.png)
+
+
+### Last update 07/07/2023
+
 Hi!
 
-Neorama it's an Android application that combines my passion for programming and astronomy. It serves several important purposes:
+Neorama is an Android application that combines my passion for programming and astronomy. It serves several important purposes:
 
 1.  **Testing new features:** This project serves as a laboratory where I can experiment with the latest features and functionalities of the Android operating system, as well as the updates and enhancements of the programming language.
 
