@@ -15,7 +15,10 @@ Neorama is an Android application that combines my passion for programming and a
 
 3.  **Astronomical exploration:** The application focuses on astronomy and provides information about near-Earth objects on the current and previous dates. It utilizes NASA's open APIs to obtain accurate and up-to-date data. These objects are graphically listed and plotted on a coordinate map, allowing users to visually explore space.
 
-_Currently, the project is in an early stage of development so some functions are still WIP tagged._
+_Currently, the project is in an early stage of development so some functions are still tagged as WIP._
+
+
+![Neorama screenshots](https://github.com/Vierco/Neorama/blob/main/app/src/main/res/drawable/screenshots.jpg)
 
 ## How This Project Is Built
 
