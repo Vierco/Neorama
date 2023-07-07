@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Should I build a bunker?</string>
+    <string name="nasa_borrow">we are borrowing some data from you…</string>
+    <string name="connectivity_error">Connectivity Error</string>
+    <string name="server_error">\"Server Error: \"</string>
+    <string name="unknown_error">\"Unknown Error: \"</string>
+    <string name="neo">Neo</string>
+    <string name="wip">Work in progress… Work in progress…</string>
+
+    <string name="today">t</string>
+    <string name="yesterday">y</string>
+    <string name="tomorrow">w</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="out_of_range">There are NEOs beyond the visible range.</string>
+    <string name="aware">Please be aware:</string>
+    <string name="today_string">Today</string>
+    <string name="yesterday_string">yesterday</string>
+    <string name="tomorrow_string">tomorrow</string>
+</resources>

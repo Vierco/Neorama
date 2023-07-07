@@ -1,0 +1,102 @@
+[versions]
+androidx-activity = "1.6.1"
+androidx-appcompat = "1.6.1"
+androidx-lifecycle = "2.6.0"
+androidx-navigation = "2.5.3"
+androidx-room = "2.5.0"
+com-github-bumptech-glide = "4.15.1"
+com-google-dagger = "2.45"
+com-squareup-retrofit2 = "2.9.0"
+io-arrow-kt = "1.1.5"
+junit = "4.13.2"
+org-jetbrains-kotlinx = "1.6.4"
+
+[libraries]
+androidx-activity-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-core-core-ktx = "androidx.core:core-ktx:1.9.0"
+androidx-core-core-splashscreen = "androidx.core:core-splashscreen:1.0.0"
+androidx-fragment-ktx = "androidx.fragment:fragment-ktx:1.5.5"
+androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-localbroadcastmanager = "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+androidx-navigation-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+androidx-recyclerview = "androidx.recyclerview:recyclerview:1.3.0"
+androidx-room-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
+androidx-room-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
+androidx-room-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
+androidx-test-espresso-espresso-contrib = "androidx.test.espresso:espresso-contrib:3.5.1"
+androidx-test-ext-junit = "androidx.test.ext:junit:1.1.5"
+com-airbnb-android-lottie = "com.airbnb.android:lottie:6.0.0"
+com-github-bumptech-glide = { module = "com.github.bumptech.glide:glide", version.ref = "com-github-bumptech-glide" }
+com-github-bumptech-glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "com-github-bumptech-glide" }
+com-google-android-material = "com.google.android.material:material:1.8.0"
+com-google-code-gson = "com.google.code.gson:gson:2.10.1"
+com-google-dagger = { module = "com.google.dagger:dagger", version.ref = "com-google-dagger" }
+com-google-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "com-google-dagger" }
+com-google-dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "com-google-dagger" }
+com-google-dagger-hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "com-google-dagger" }
+com-squareup-okhttp3-okhttp = "com.squareup.okhttp3:okhttp:4.9.3"
+com-squareup-retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "com-squareup-retrofit2" }
+com-squareup-retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "com-squareup-retrofit2" }
+io-arrow-kt-arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "io-arrow-kt" }
+javax-inject = "javax.inject:javax.inject:1"
+junit = { module = "junit:junit", version.ref = "junit" }
+location-services = "com.google.android.gms:play-services-location:21.0.1"
+mockito-inline = "org.mockito:mockito-inline:5.2.0"
+mockito-kotlin = "org.mockito.kotlin:mockito-kotlin:4.1.0"
+org-jetbrains-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "org-jetbrains-kotlinx"}
+org-jetbrains-annotations = "org.jetbrains:annotations:13.0"
+org-jetbrains-kotlinx-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "org-jetbrains-kotlinx" }
+test-rules = "androidx.test:rules:1.5.0"
+test-ext = "androidx.test.ext:junit-ktx:1.1.5"
+test-runner = "androidx.test:runner:1.5.2"
+test-idling-resource = "com.jakewharton.espresso:okhttp3-idling-resource:1.0.0"
+cash-turbine = "app.cash.turbine:turbine:0.7.0"
+custom-snackbar = "org.aviran.cookiebar2:cookiebar2:1.1.5"
+
+[bundles]
+dagger-hilt = [
+    "com-google-dagger",
+    "com-google-dagger-hilt-android",
+]
+espresso = [
+    "androidx-test-espresso-espresso-contrib",
+    "test-idling-resource"
+]
+lifecycle = [
+    "androidx-lifecycle-lifecycle-runtime-ktx",
+    "androidx-lifecycle-lifecycle-viewmodel-ktx",
+]
+navigation = [
+    "androidx-navigation-navigation-fragment-ktx",
+    "androidx-navigation-navigation-ui-ktx",
+]
+retrofit = [
+    "com-squareup-retrofit2-converter-gson",
+    "com-squareup-retrofit2-retrofit",
+]
+room = [
+    "androidx-room-room-ktx",
+    "androidx-room-room-runtime",
+]
+testing = [
+    "androidx-test-espresso-espresso-contrib",
+    "androidx-test-ext-junit",
+    "test-rules",
+    "test-runner",
+    "test-ext",
+]
+
+[plugins]
+androidx-navigation-safeargs-kotlin = "androidx.navigation.safeargs.kotlin:2.5.3"
+com-android-application = "com.android.application:7.4.2"
+com-android-library = "com.android.library:7.4.2"
+com-github-ben-manes-versions = "com.github.ben-manes.versions:0.46.0"
+com-google-dagger-hilt-android = "com.google.dagger.hilt.android:2.45"
+nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.0"
+org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.8.10"
+org-jetbrains-kotlin-jvm = "org.jetbrains.kotlin.jvm:1.8.10"
+org-jetbrains-kotlin-kapt = "org.jetbrains.kotlin.kapt:1.8.10"

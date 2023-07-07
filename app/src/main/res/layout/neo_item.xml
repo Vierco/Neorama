@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!-- TODO Dimens -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.alvarez.sergio.actraining.domain.NeoEntityDomain" />
+
+        <variable
+            name="neoItemView"
+            type="com.alvarez.sergio.actraining.domain.NeoEntityDomain" />
+    </data>
+
+    <!--    android:translationY="20dp"-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/standard_margin">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical" />
+
+                <com.santalu.diagonalimageview.DiagonalImageView
+                    android:id="@+id/neoImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@color/purple"
+                    app:di_distance="55dp"
+                    app:di_end="right"
+                    app:di_start="bottom"
+                    app:idAssigned="@{neoItemView.imageAssigned}" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/standard_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/neo"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/letters_small" />
+
+                    <TextView
+                        android:id="@+id/item_neo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/security_margin"
+                        android:text="@{`` + neoItemView.name}"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tool:text="Neo title" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="@dimen/standard_margin"
+                    android:src="@{neoItemView.is_potentially_hazardous_asteroid ? @drawable/ic_save_on : @drawable/ic_save_off}" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</layout>
+

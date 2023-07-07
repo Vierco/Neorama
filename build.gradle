@@ -1,0 +1,33 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias libs.plugins.com.android.application apply false
+    alias libs.plugins.com.android.library apply false
+    alias libs.plugins.org.jetbrains.kotlin.android apply false
+    alias libs.plugins.androidx.navigation.safeargs.kotlin apply false
+    alias libs.plugins.org.jetbrains.kotlin.kapt apply false
+    alias libs.plugins.org.jetbrains.kotlin.jvm apply false
+    alias libs.plugins.com.google.dagger.hilt.android apply false
+    alias libs.plugins.com.github.ben.manes.versions apply true
+//  alias libs.plugins.com.nl.littlerobots.version.catalog.update apply true
+    id "nl.littlerobots.version-catalog-update" version "0.8.0"  // Todo Don't read the alias… why?
+
+}
+
+def isNonStable = { String version ->
+    def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
+
+// https://github.com/ben-manes/gradle-versions-plugin
+tasks.named("dependencyUpdates").configure {
+    resolutionStrategy {
+        componentSelection {
+            all {
+                if (isNonStable(it.candidate.version) && !isNonStable(it.currentVersion)) {
+                    reject('Release candidate')
+                }
+            }
+        }
+    }
+}

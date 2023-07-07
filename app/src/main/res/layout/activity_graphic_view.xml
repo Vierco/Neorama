@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgound_gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:layout_marginBottom="@dimen/security_margin"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="10dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/universe_radial"
+                android:orientation="horizontal">
+
+                <com.alvarez.sergio.actraining.ui.utils.VisibleUniverse
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+                    android:tileMode="repeat" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <Button
+                android:id="@+id/scaleMore"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/standard_marginx2"
+                android:background="@drawable/round_bt_med"
+                android:elevation="2dp"
+                android:onClick="makeScale"
+                android:paddingTop="5dp"
+                android:stateListAnimator="@null"
+                android:text=" + "
+                android:textColor="@color/gr_top"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/scaleLess"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/standard_marginx2"
+                android:background="@drawable/round_bt_top"
+                android:elevation="2dp"
+                android:onClick="makeScale"
+                android:paddingTop="5dp"
+                android:stateListAnimator="@null"
+                android:text=" - "
+                android:textColor="@color/gr_mid"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/wip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:marqueeRepeatLimit="-1"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:text="@string/wip"
+        android:textColor="#50ffffff"
+        android:textSize="42sp" />
+
+</FrameLayout>

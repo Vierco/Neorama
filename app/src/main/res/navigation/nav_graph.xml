@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_dest">
+
+    <fragment
+        android:id="@+id/main_dest"
+        android:name="com.alvarez.sergio.actraining.ui.Main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_to_detail"
+            app:destination="@id/detail_dest"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_main_dest_to_graphicView"
+            app:destination="@id/graphicView"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_dest"
+        android:name="com.alvarez.sergio.actraining.ui.Detail.NeoDetailFragment"
+        android:label="fragment_neo_detail"
+        tools:layout="@layout/fragment_neo_detail">
+        <argument
+            android:name="neoEntityId"
+            app:argType="integer" />
+    </fragment>
+    <activity
+        android:id="@+id/graphicView"
+        android:name="com.alvarez.sergio.actraining.ui.GraphicView"
+        android:label="GraphicView" />
+</navigation>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="com.alvarez.sergio.actraining.domain.NeoEntityDomain" />
+
+        <variable
+            name="loadingDBVar"
+            type="boolean" />
+
+        <variable
+            name="neosDBVar"
+            type="List&lt;NeoEntityDomain>" />
+
+        <variable
+            name="error"
+            type="String" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".ui.Main.MainFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Todo Review error message -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:text="@{error}"
+                android:textColor="#ff5500"
+                android:textSize="30sp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/standard_margin"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/standard_margin"
+                            android:paddingEnd="@dimen/standard_marginx2"
+                            android:text="Today"
+                            android:textColor="@color/purple"
+                            android:textSize="@dimen/letters_big"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/neoDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/standard_margin"
+                            android:layout_marginTop="@dimen/security_margin"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/letters_small"
+                            tools:text="Texto" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/standard_margin"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/standard_margin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/bt_td"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/round_bt_bot"
+                                    android:gravity="center"
+                                    android:text="@string/today"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/letters_medium"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/today_string"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/letters_smallx2"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/standard_margin"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/bt_ys"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/round_bt_top"
+                                    android:gravity="center"
+                                    android:text="@string/yesterday"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/blue"
+                                    android:textSize="@dimen/letters_medium"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/yesterday_string"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/letters_smallx2"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/bt_tw"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/round_bt_med"
+                                    android:gravity="center"
+                                    android:text="@string/tomorrow"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/letters_medium"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tomorrow_string"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="@dimen/letters_smallx2"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <TextView
+                            android:id="@+id/wip"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:freezesText="true"
+                            android:marqueeRepeatLimit="-1"
+                            android:maxLines="1"
+                            android:scrollHorizontally="true"
+                            android:text="@string/wip"
+                            android:textColor="#50000000"
+                            android:textSize="22sp" />
+
+                    </FrameLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/security_margin"
+                android:layout_marginEnd="@dimen/security_margin">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:items="@{neosDBVar}"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@drawable/in_gradient" />
+
+            </FrameLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/searchingBtn"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/standard_margin"
+            android:adjustViewBounds="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/searching" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingLottie"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loader"
+            app:visible="@{loadingDBVar}" />
+
+
+    </FrameLayout>
+</layout>
